@@ -272,7 +272,7 @@ Essas referências explicam fundamentos, camadas e como escalar sistemas limpos.
 
 # 💬 12. Autor & Licença
 
-Projeto mantido por **Seu Nome**
+Projeto mantido por **Carlos Roberto da Silva Filho**
 
 Distribuído sob a **Licença MIT**, permitindo:
 
