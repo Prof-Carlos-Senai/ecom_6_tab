@@ -6,7 +6,7 @@ function gerarToken(payload) {
     return jwt.sign(payload, SEGREDO, { expiresIn: '3h' })
 }
 
-function verificaToken(token) {
+function verificarToken(token) {
     try {
         return jwt.verify(token, SEGREDO)
     } catch (err) {
@@ -15,4 +15,4 @@ function verificaToken(token) {
     }
 }
 
-module.exports = { gerarToken, verificaToken }
+module.exports = { gerarToken, verificarToken }

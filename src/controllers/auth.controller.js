@@ -15,7 +15,7 @@ async function login(req, res) {
     } catch (err) {
         console.error('Erro no controller de login:', err.message)
 
-        return res.status(400).json({
+        return res.status(500).json({
             mensagem: err.message || 'Erro ao realizar login'
         })
     }
