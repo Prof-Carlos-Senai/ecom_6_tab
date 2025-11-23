@@ -3,10 +3,10 @@ const { validaEmail, validaTelefone, validaCPF } = require('../utils/validacao')
 const { hashSenha } = require('../utils/criptografia')
 
 async function cadastrar(dados) {
-    const { nome, email, telefone, cpf, identidade, senha, tipo_usuario  } = dados
+    const { nome, email, telefone, cpf, identidade, senha  } = dados
 
     // -------- validações --------
-    if (!nome || !email || !telefone || !cpf || !senha || !tipo_usuario) {
+    if (!nome || !email || !telefone || !cpf || !senha) {
         throw new Error('Campos obrigatórios não informados')
     }
 
@@ -38,7 +38,7 @@ async function cadastrar(dados) {
     const senhaBcrypt = await hashSenha(senha)
 
     // -------- criar no banco --------
-    const novoUsuario = await Usuario.create({
+    await Usuario.create({
         nome,
         email,
         telefone,
@@ -48,7 +48,7 @@ async function cadastrar(dados) {
         tipo_usuario
     })
 
-    return novoUsuario
+    return { ok: true }
 }
 
 module.exports = { cadastrar }
