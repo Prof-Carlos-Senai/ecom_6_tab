@@ -44,8 +44,7 @@ async function cadastrar(dados) {
         telefone,
         cpf,
         identidade,
-        senha: senhaBcrypt,
-        tipo_usuario
+        senha: senhaBcrypt
     })
 
     return { ok: true }
